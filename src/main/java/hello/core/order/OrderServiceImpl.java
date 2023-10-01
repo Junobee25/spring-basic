@@ -17,7 +17,7 @@ public class OrderServiceImpl implements OrderService{
     
     //lombok이 만들어줌
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDisCountPolicy") DisCountPolicy disCountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, DisCountPolicy disCountPolicy) {
         this.memberRepository = memberRepository;
         this.disCountPolicy = disCountPolicy;
     }
