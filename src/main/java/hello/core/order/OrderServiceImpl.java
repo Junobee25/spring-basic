@@ -9,14 +9,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderServiceImpl implements OrderService{
 
-    private final MemberRepository memberRepository;
-    private final DisCountPolicy disCountPolicy;
+    @Autowired private MemberRepository memberRepository;
+    @Autowired  private DisCountPolicy disCountPolicy;
 
-    @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DisCountPolicy disCountPolicy) {
-        this.memberRepository = memberRepository;
-        this.disCountPolicy = disCountPolicy;
-    }
+//    @Autowired
+//    public OrderServiceImpl(MemberRepository memberRepository, DisCountPolicy disCountPolicy) {
+//        System.out.println("memberRepository" + memberRepository);
+//        System.out.println("disCountPolicy" + disCountPolicy);
+//        this.memberRepository = memberRepository;
+//        this.disCountPolicy = disCountPolicy;
+//    }
 
 
     // DIP : 주문서비스 클라이언트인(OrderServiceImpl)은

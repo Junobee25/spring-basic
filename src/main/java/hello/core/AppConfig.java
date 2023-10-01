@@ -30,7 +30,8 @@ public class AppConfig {
     public OrderService orderService() {
         System.out.println("Call AppConfig.orderService");
         // 생성자 주입
-        return new OrderServiceImpl(memberRepository(), disCountPolicy());
+//        return new OrderServiceImpl(memberRepository(), disCountPolicy());
+        return null;
     }
     @Bean
     public DisCountPolicy disCountPolicy() {
