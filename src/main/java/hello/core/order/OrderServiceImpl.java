@@ -1,5 +1,6 @@
 package hello.core.order;
 
+import hello.core.anntation.MainDisCountPolicy;
 import hello.core.discount.DisCountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
@@ -17,7 +18,7 @@ public class OrderServiceImpl implements OrderService{
     
     //lombok이 만들어줌
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DisCountPolicy disCountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDisCountPolicy DisCountPolicy disCountPolicy) {
         this.memberRepository = memberRepository;
         this.disCountPolicy = disCountPolicy;
     }
