@@ -5,20 +5,22 @@ import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor // 파이널 붙은 것을 가지고 생성자 만들어 줌
+//@RequiredArgsConstructor // 파이널 붙은 것을 가지고 생성자 만들어 줌
 public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository;
     private final DisCountPolicy disCountPolicy;
     
     //lombok이 만들어줌
-//    public OrderServiceImpl(MemberRepository memberRepository, DisCountPolicy disCountPolicy) {
-//        this.memberRepository = memberRepository;
-//        this.disCountPolicy = disCountPolicy;
-//    }
+    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDisCountPolicy") DisCountPolicy disCountPolicy) {
+        this.memberRepository = memberRepository;
+        this.disCountPolicy = disCountPolicy;
+    }
 
 
 

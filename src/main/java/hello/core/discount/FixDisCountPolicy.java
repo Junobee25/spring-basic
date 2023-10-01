@@ -1,9 +1,11 @@
 package hello.core.discount;
 import hello.core.member.Grade;
 import hello.core.member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+@Qualifier("fixDisCountPolicy")
 public class FixDisCountPolicy implements DisCountPolicy{
 
     private int discountFixAmount = 1000;
