@@ -3,19 +3,22 @@ package hello.core.order;
 import hello.core.discount.DisCountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor // 파이널 붙은 것을 가지고 생성자 만들어 줌
 public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository;
     private final DisCountPolicy disCountPolicy;
-
-    public OrderServiceImpl(MemberRepository memberRepository, DisCountPolicy disCountPolicy) {
-        this.memberRepository = memberRepository;
-        this.disCountPolicy = disCountPolicy;
-    }
+    
+    //lombok이 만들어줌
+//    public OrderServiceImpl(MemberRepository memberRepository, DisCountPolicy disCountPolicy) {
+//        this.memberRepository = memberRepository;
+//        this.disCountPolicy = disCountPolicy;
+//    }
 
 
 
